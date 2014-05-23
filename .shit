@@ -1,0 +1,24 @@
+if [ "$type" = script ];then
+        local cmd="$script"    
+        echo "[cmd] $cmd"
+        eval  "$cmd"
+    elif [ "$type" = menu ];then
+        pick_from_menu 
+    else
+        print_color 31 "[Error] no handler for type of operation: " "$type" 
+    fi
+
+    echo "[TAG NAME ] $tag_name"
+
+local pointer='\$$tag_name'
+echo "$pointer"
+eval "$pointer"
+eval echo "$pointer"
+#eval echo $pointer
+#echo 
+#`eval echo \"$pointer\"`
+#echo `eval \"$cmd\"
+#local content=`eval  echo "$pointer"`
+# eval echo "$pointer" 
+exit
+    echo "[TAG NAME CONTENT] $content"
